@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <h1>🌤️ Real-Time Weather Dashboard</h1>
+  <form method="POST">
+    <input type="text" name="city" placeholder="Enter city" required>
+    <button type="submit">Get Weather</button>
+  </form>
+
+  {% if weather %}
+    <div>
+      <h2>{{ weather.city }}</h2>
+      <p>Temperature: {{ weather.temp }} °C</p>
+      <p>Humidity: {{ weather.humidity }}%</p>
+      <p>Wind Speed: {{ weather.wind }} m/s</p>
+    </div>
+  {% endif %}
+</body>
+</html>
